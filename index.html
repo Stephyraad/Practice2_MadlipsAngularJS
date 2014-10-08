@@ -1,9 +1,10 @@
-<html ng-app=''>
+<html ng-app='myApp'>
 <head >
 	<title>Mad Lips Unit 1</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	
 	
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body>
@@ -12,7 +13,7 @@
 		<img src="images/ng-mad-libs-logo.png">
 		<h1 id="text">Automate This!</h1>
 	</div>
-
+<div ng-controller="MyCtrl">
 	<div id="words">
 		<h2>Provide the following Words:</h2>
 		<table>
@@ -41,6 +42,10 @@
 {{name}} was a {{jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with her life mentor {{celebrity}} who told her to learn how to {{uselessSkills}} with Thinkful. Thinkful didn't offer a course on {{uselessSkills}} so she studied programming instead. 
  
 What a great decision! With her new skills, {{femaleName}} built a(n) {{adjective}} robot named {{obnCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNum}} faster.</p>
+
+</div> 
+
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
 
