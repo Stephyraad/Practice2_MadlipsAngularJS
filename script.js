@@ -1,4 +1,4 @@
 var myApp= angular.module("myApp", []);
-myApp.controller("MyCtrl", function($scope){
-
+myApp.controller("MyController", function($scope){
+	// $scope.option="Female Name";
 });

@@ -13,12 +13,28 @@
 		<img src="images/ng-mad-libs-logo.png">
 		<h1 id="text">Automate This!</h1>
 	</div>
-<div ng-controller="MyCtrl">
+<div ng-controller="MyController">
 	<div id="words">
 		<h2>Provide the following Words:</h2>
+
+	<h4>Pick a Gender:</h4>
+	<label>Female
+		<input type="radio" ng-model="gender" value="Female Name" checked>
+	</label> 
+	<label>Male
+		<input type="radio" ng-model="gender" value="Male Name">
+	</label>
+
+<!-- 	<label>Pick a gender
+		<select ng-model="gender">
+			<option value="Female Name">Female</option>
+			<option value="Male Name">Male</option>
+		</select>
+	</label> -->
+
 		<table>
 			<tr>
-				<td><input ng-model="name" placeholder="female name"></td>
+				<td><input ng-model="name" placeholder="{{gender}}"></td>
 				<td><input ng-model="jobTitle" placeholder="job title"></td>
 				<td><input ng-model= "tediousTask" placeholder="tedious task"></td>
 				
@@ -37,6 +53,8 @@
 				
 			</tr>
 		</table>
+
+
 	</div>
 <p>
 {{name}} was a {{jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with her life mentor {{celebrity}} who told her to learn how to {{uselessSkills}} with Thinkful. Thinkful didn't offer a course on {{uselessSkills}} so she studied programming instead. 
