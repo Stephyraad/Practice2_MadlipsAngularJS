@@ -1,0 +1,27 @@
+body{
+	width: 900px;
+	margin: auto;
+	border: solid black 2px;
+
+}
+
+.face{
+	float: left;
+	border: solid black 2px;
+	padding: 10px;
+}
+.logotext{
+	text-align: center;
+}
+#text{
+	font-size:90px;
+	margin-top: -10px;
+	border-bottom: solid black 2px;
+	padding-bottom: 13.5px;
+}
+
+#words{
+	border-bottom: solid 2px black;
+	padding-bottom: 50px;
+	padding-left: 100px;
+}
