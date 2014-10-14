@@ -22,7 +22,7 @@
 
 	<div ng-show="errorMessage">
 		{{errorMessage}}
-		<div ng-show="myForm.hugeNum.$error.integer">You must enter a number higher than 10 characters</div>
+		<!-- <div ng-if="myForm.hugeNum.$invalid.pattern"><p>You must enter a number</p></div> -->
 	</div>
 
 	<h4>Pick a Gender:</h4>
@@ -50,7 +50,7 @@
 			<tr>
 				<td><input ng-model="input.adjective" placeholder="adjective" required></td>
 				<td><input ng-model="input.obnCelebrity" placeholder="obnoxiuous celebrity" required></td>
-				<td><input ng-model= "input.hugeNum" placeholder="huge number" minlength="10" integer required></td>
+				<td><input type="number" ng-model= "input.hugeNum" placeholder="huge number"  required ng-pattern="integer"></td>
 				
 			</tr>
 		</table>

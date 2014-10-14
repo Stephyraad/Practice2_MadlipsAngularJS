@@ -8,8 +8,10 @@ myApp.controller("MyController", function($scope){
 	$scope.submit=function(){
 		if($scope.myForm.$valid){
 			$scope.isShow= true;
+		}else if ($scope.hugeNum.$invalid){
+			$scope.errorMessage="Huge Number needs to be an integer";
 		}else{
-			$scope.errorMessage="You must submit all the fields";
+			$scope.errorMessage="You must submit all the fields"
 		}
 
 	};
@@ -20,5 +22,6 @@ myApp.controller("MyController", function($scope){
 
 		
 	};
+	$scope.integer=/^\d*$/;
 });
-
+// ng-pattern="integer"
