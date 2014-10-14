@@ -16,40 +16,41 @@
 
 <div ng-controller="MyController">
 
-<div ng-hide="isShow">
+<div ng-hide="isShow" >
 <form id="words"  ng-submit="submit()" name="myForm"  ng- novalidate>
 		<h2>Provide the following Words:</h2>
 
 	<div ng-show="errorMessage">
 		{{errorMessage}}
+		<div ng-show="myForm.hugeNum.$error.integer">You must enter a number higher than 10 characters</div>
 	</div>
 
 	<h4>Pick a Gender:</h4>
 	<label>Female
-		<input type="radio" ng-model="gender" value="Female Name" checked>
+		<input type="radio" ng-model="input.gender" value="Female Name" checked>
 	</label> 
 	<label>Male
-		<input type="radio" ng-model="gender" value="Male Name">
+		<input type="radio" ng-model="input.gender" value="Male Name">
 	</label>
 
 		<table >
 			<tr>
-				<td><input ng-model="name" placeholder="{{gender}}" required></td>
-				<td><input ng-model="cont.jobTitle" placeholder="job title" required></td>
-				<td><input ng-model= "tediousTask" placeholder="tedious task" required></td>
+				<td><input ng-model="input.name" placeholder="{{input.gender}}" required></td>
+				<td><input ng-model="input.jobTitle" placeholder="job title" required></td>
+				<td><input ng-model= "input.tediousTask" placeholder="tedious task" required></td>
 				
 			</tr>
 
 			<tr>
-				<td><input ng-model= "dirtyTask" placeholder="dirty task" required></td>
-				<td><input ng-model="celebrity" placeholder="celebrity" required></td>
-				<td><input ng-model ="uselessSkills" placeholder="useless skills" required></td>
+				<td><input ng-model= "input.dirtyTask" placeholder="dirty task" required></td>
+				<td><input ng-model="input.celebrity" placeholder="celebrity" required></td>
+				<td><input ng-model ="input.uselessSkills" placeholder="useless skills" required></td>
 				
 			</tr>
 			<tr>
-				<td><input ng-model="adjective" placeholder="adjective" required></td>
-				<td><input ng-model="obnCelebrity" placeholder="obnoxiuous celebrity" required></td>
-				<td><input ng-model= "hugeNum" placeholder="huge number" minlength="10" integer></td>
+				<td><input ng-model="input.adjective" placeholder="adjective" required></td>
+				<td><input ng-model="input.obnCelebrity" placeholder="obnoxiuous celebrity" required></td>
+				<td><input ng-model= "input.hugeNum" placeholder="huge number" minlength="10" integer required></td>
 				
 			</tr>
 		</table>
@@ -59,9 +60,10 @@
 
 <div ng-show="isShow">
 <p >
-{{name}} was a {{jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{name}} met with her life mentor {{celebrity}} who told her to learn how to {{uselessSkills}} with Thinkful. Thinkful didn't offer a course on {{uselessSkills}} so she studied programming instead. 
+{{input.name}} was a {{input.jobTitle}} who loved technology. Although {{(input.gender=="Female Name")? "she": "he"}} loved parts of {{ (input.gender =="Female Name") ? "her" : "his" }} job, {{(input.gender=="Female Name")? "she": "he"}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{name}} met with {{(gender=="Female Name")? "her": "his"}} life mentor {{input.celebrity}} who told {{ (input.gender =="Female Name") ? "her" : "his" }} to learn how to {{input.uselessSkills}} with Thinkful. Thinkful didn't offer a course on {{input.uselessSkills}} so {{(input.gender=="Female Name")? "she": "he"}} studied programming instead. 
  
-What a great decision! With her new skills, {{name}} built a(n) {{adjective}} robot named {{obnCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNum}} faster.</p>
+What a great decision! With {{ (input.gender =="Female Name") ? "her" : "his" }} new skills, {{input.name}} built a(n) {{input.adjective}} robot named {{input.obnCelebrity}} that not only loved {{input.dirtyTask}} but did it {{input.hugeNum}} faster.</p>
+<button ng-click="restart()">Restart</button>
 </div>	<!--end of div paragraph-->
 </div> 
 
