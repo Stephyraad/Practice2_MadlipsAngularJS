@@ -1,5 +1,5 @@
 body{
-	width: 900px;
+	width: 700px;
 	margin: auto;
 	border: solid black 2px;
 
@@ -24,7 +24,14 @@ body{
 	border-bottom: solid 2px black;
 	padding-bottom: 50px;
 	padding-left: 100px;
+	padding-bottom: 100px;
 }
 p{
 	margin: 50px;
+}
+#submit{
+	float: right;
+	margin-right: 100px;
+	margin-top: 50px;
+	padding: 5px;
 }

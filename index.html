@@ -13,9 +13,16 @@
 		<img src="images/ng-mad-libs-logo.png">
 		<h1 id="text">Automate This!</h1>
 	</div>
+
 <div ng-controller="MyController">
-	<div id="words">
+
+<div ng-hide="isShow">
+<form id="words"  ng-submit="submit()" name="myForm"  ng- novalidate>
 		<h2>Provide the following Words:</h2>
+
+	<div ng-show="errorMessage">
+		{{errorMessage}}
+	</div>
 
 	<h4>Pick a Gender:</h4>
 	<label>Female
@@ -25,42 +32,37 @@
 		<input type="radio" ng-model="gender" value="Male Name">
 	</label>
 
-<!-- 	<label>Pick a gender
-		<select ng-model="gender">
-			<option value="Female Name">Female</option>
-			<option value="Male Name">Male</option>
-		</select>
-	</label> -->
-
-		<table>
+		<table >
 			<tr>
-				<td><input ng-model="name" placeholder="{{gender}}"></td>
-				<td><input ng-model="jobTitle" placeholder="job title"></td>
-				<td><input ng-model= "tediousTask" placeholder="tedious task"></td>
+				<td><input ng-model="name" placeholder="{{gender}}" required></td>
+				<td><input ng-model="cont.jobTitle" placeholder="job title" required></td>
+				<td><input ng-model= "tediousTask" placeholder="tedious task" required></td>
 				
 			</tr>
 
 			<tr>
-				<td><input ng-model= "dirtyTask" placeholder="dirty task"></td>
-				<td><input ng-model="celebrity" placeholder="celebrity"></td>
-				<td><input ng-model ="uselessSkills" placeholder="useless skills"></td>
+				<td><input ng-model= "dirtyTask" placeholder="dirty task" required></td>
+				<td><input ng-model="celebrity" placeholder="celebrity" required></td>
+				<td><input ng-model ="uselessSkills" placeholder="useless skills" required></td>
 				
 			</tr>
 			<tr>
-				<td><input ng-model="adjective" placeholder="adjective"></td>
-				<td><input ng-model="obnCelebrity" placeholder="obnoxiuous celebrity"></td>
-				<td><input ng-model= " hugeNum" placeholder="huge number"></td>
+				<td><input ng-model="adjective" placeholder="adjective" required></td>
+				<td><input ng-model="obnCelebrity" placeholder="obnoxiuous celebrity" required></td>
+				<td><input ng-model= "hugeNum" placeholder="huge number" minlength="10" integer></td>
 				
 			</tr>
 		</table>
+		<input id="submit" type="submit" value="Generate My Mad Lib" ></input>
+</form>
+</div> <!-- end of div ng-hide -->
 
-
-	</div>
-<p>
-{{name}} was a {{jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with her life mentor {{celebrity}} who told her to learn how to {{uselessSkills}} with Thinkful. Thinkful didn't offer a course on {{uselessSkills}} so she studied programming instead. 
+<div ng-show="isShow">
+<p >
+{{name}} was a {{jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{name}} met with her life mentor {{celebrity}} who told her to learn how to {{uselessSkills}} with Thinkful. Thinkful didn't offer a course on {{uselessSkills}} so she studied programming instead. 
  
-What a great decision! With her new skills, {{femaleName}} built a(n) {{adjective}} robot named {{obnCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNum}} faster.</p>
-
+What a great decision! With her new skills, {{name}} built a(n) {{adjective}} robot named {{obnCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNum}} faster.</p>
+</div>	<!--end of div paragraph-->
 </div> 
 
 <script type="text/javascript" src="script.js"></script>
