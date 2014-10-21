@@ -4,6 +4,8 @@
 	
 	
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript" src="angular-animate.min.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
@@ -58,7 +60,7 @@
 </form>
 </div> <!-- end of div ng-hide -->
 
-<div ng-show="isShow">
+<div class="my-animation" ng-show="isShow">
 <p >
 {{input.name}} was a {{input.jobTitle}} who loved technology. Although {{(input.gender=="Female Name")? "she": "he"}} loved parts of {{ (input.gender =="Female Name") ? "her" : "his" }} job, {{(input.gender=="Female Name")? "she": "he"}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{name}} met with {{(gender=="Female Name")? "her": "his"}} life mentor {{input.celebrity}} who told {{ (input.gender =="Female Name") ? "her" : "his" }} to learn how to {{input.uselessSkills}} with Thinkful. Thinkful didn't offer a course on {{input.uselessSkills}} so {{(input.gender=="Female Name")? "she": "he"}} studied programming instead. 
  

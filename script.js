@@ -1,4 +1,4 @@
-var myApp= angular.module("myApp", []);
+var myApp= angular.module("myApp", ["ngAnimate"]);
 
 myApp.controller("MyController", function($scope){
 	$scope.errorMessage= false;
