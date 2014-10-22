@@ -19,10 +19,10 @@
 <div ng-controller="MyController">
 
 <div ng-hide="isShow" >
-<form id="words"  ng-submit="submit()" name="myForm"  ng- novalidate>
+<form id="words"  ng-submit="submit()" name="myForm"  novalidate>
 		<h2>Provide the following Words:</h2>
 
-	<div ng-show="errorMessage">
+	<div class="my-error-message" ng-show="errorMessage">
 		{{errorMessage}}
 		<!-- <div ng-if="myForm.hugeNum.$invalid.pattern"><p>You must enter a number</p></div> -->
 	</div>
